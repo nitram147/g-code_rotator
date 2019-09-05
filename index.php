@@ -215,11 +215,11 @@ if(!empty($_POST['convert'])){
 	}
 
 	//return header to automaticly save output as file
-    header("Content-type: text/plain");
-    header("Content-Disposition: attachment; filename=rotated_".$gcode_file_name);
+	header("Content-type: text/plain");
+	header("Content-Disposition: attachment; filename=rotated_".$gcode_file_name);
 
-    //print converted g-code with windows like EOL  = \r\n (programs like Mach3 need this type of EOL)
-    echo preg_replace('/\r|\r\n|\n/', "\r\n", $new_gcode);
+	//print converted g-code with windows like EOL  = \r\n (programs like Mach3 need this type of EOL)
+	echo preg_replace('/\r|\r\n|\n/', "\r\n", $new_gcode);
 
 	exit();
 
